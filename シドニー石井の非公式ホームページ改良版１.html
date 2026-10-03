@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【非公式】シドニー石井 FAN SITE</title>
+    <!-- Google Fontsの導入 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ------------------------------------
+           1. 基本設定（全体デザイン）
+        ------------------------------------ */
+        :root {
+            --primary-color: #6a11cb;   /* テーマカラー（グラデーション主色） */
+            --secondary-color: #2575fc; /* アクセントカラー */
+            --text-color: #333333;      /* 文字色 */
+            --bg-light: #f8f9fa;        /* 薄い背景色 */
+            --card-bg: #ffffff;         /* カードの背景色 */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-light);
+            line-height: 1.8;
+            scroll-behavior: smooth;
+        }
+
+        /* ------------------------------------
+           2. ヘッダー & ナビゲーション
+        ------------------------------------ */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #ffffff;
+            padding: 30px 20px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        nav a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 5px 12px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* ------------------------------------
+           3. レイアウト & カード枠組み
+        ------------------------------------ */
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 12px;
+            margin-bottom: 20px;
+            font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            margin: 15px 0 10px;
+            color: #444;
+        }
+
+        .disclaimer {
+            background-color: #fff8e6;
+            border: 1px solid #ffe58f;
+            color: #8a6d3b;
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            margin-bottom: 30px;
+        }
+
+        /* ------------------------------------
+           4. 各セクションの詳細デザイン
+        ------------------------------------ */
+        /* NEWSリスト */
+        .news-list {
+            list-style: none;
+        }
+
+        .news-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+            font-size: 0.95rem;
+        }
+
+        .news-list li:last-child {
+            border-bottom: none;
+        }
+
+        .news-date {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-right: 10px;
+        }
+
+        /* PROFILEエリア */
+        .profile-card {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            border: 3px solid #ffffff;
+        }
+
+        .profile-info h3 {
+            font-size: 1.4rem;
+            margin-top: 0;
+            color: #222;
+        }
+
+        .profile-info p {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .btn-sns {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 18px;
+            background-color: #1da1f2;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+
+        .btn-sns:hover {
+            opacity: 0.85;
+        }
+
+        /* WORK & CAREERエリア */
+        .work-list {
+            list-style: none;
+        }
+
+        .work-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .work-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .work-link {
+            display: inline-block;
+            margin-top: 8px;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+            word-break: break-all;
+        }
+
+        .work-link:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        /* ------------------------------------
+           5. フッター & スマホ対応
+        ------------------------------------ */
+        footer {
+            background-color: #222;
+            color: #aaa;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.85rem;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 600px) {
+            .profile-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .profile-img {
+                width: 140px;
+                height: 140px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+        <h1>Sydney Ishii Fan Site</h1>
+        <nav>
+            <ul>
+                <li><a href="#news">NEWS</a></li>
+                <li><a href="#profile">PROFILE</a></li>
+                <li><a href="#career">CAREER</a></li>
+                <li><a href="#work">WORK</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 免責事項 -->
+        <div class="disclaimer">
+            <strong>【ご注意】</strong> 当サイトは個人のファンが運営する非公式ファンサイトです。本人様・所属事務所・関係者各位とは一切関係ありません。
+        </div>
+
+        <!-- ニュース -->
+        <section id="news">
+            <h2>NEWS</h2>
+            <ul class="news-list">
+                <li><span class="news-date">2026.10.01</span> サイトをリニューアル開設しました！</li>
+            </ul>
+        </section>
+
+        <!-- プロフィール -->
+        <section id="profile">
+            <h2>PROFILE</h2>
+            <div class="profile-card">
+                <!-- 同じフォルダに「sydney.jpg」を保存してください -->
+                <img src="シドニー石井.jpeg" alt="シドニー石井" class="profile-img">
+                <div class="profile-info">
+                    <h3>シドニー石井 <small>(Sydney Ishii)</small></h3>
+                    <p><strong>生年月日：</strong>1994年7月1日</p>
+                    <p><strong>血液型：</strong>B型</p>
+                    <p><strong>身長 / 体重：</strong>167 cm /70 kg</p>
+                    <p><strong>出身地：</strong>神奈川県</p>
+                    <p><strong>特技・趣味：</strong>野球、麻雀、犬を見る</p>
+                    <a href="https://x.com" target="_blank" rel="noopener" class="btn-sns">公式X（Twitter）を見る</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- キャリア -->
+        <section id="career">
+            <h2>CAREER</h2>
+            <p>相方の吉野 崇（よしの たかし）さんとコンビ「シドニー」を結成。</p>
+            <p>吉本興業の劇場（神保町よしもと漫才劇場など）を中心にライブ出演を重ねている。</p>
+        </section>
+
+        <!-- ワーク -->
+        <section id="work">
+            <h2>WORK</h2>
+            <ul class="work-list">
+                <li class="work-item">
+                    <h3>ラジオ</h3>
+                    <p><strong>シドニー石井と一軒目</strong></p>
+                    <a href="https://podcasts.apple.com/jp/podcast/%E3%82%B7%E3%83%89%E3%83%8B%E3%83%BC%E7%9F%B3%E4%BA%95%E3%81%A81%E8%BB%92%E7%9B%AE/id1831682386" target="_blank" rel="noopener" class="work-link">
+                        Apple Podcastで聴く ➔
+                    </a>
+                </li>
+                <li class="work-item">
+                    <h3>YouTube</h3>
+                    <p><strong>僕らの別荘</strong></p>
+                    <a href="https://www.youtube.com/channel/UCL43u22Otj2GkpdYlRio1sA" target="_blank" rel="noopener" class="work-link">
+                        YouTubeチャンネルを見る ➔
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer>
+        <p>当サイトは個人のファンが運営する非公式ファンサイトです。</p>
+        <p>&copy; 2026 Sydney Ishii FAN SITE All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
